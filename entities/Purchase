@@ -1,0 +1,43 @@
+{
+  "name": "Purchase",
+  "type": "object",
+  "properties": {
+    "nick": {
+      "type": "string",
+      "description": "Nick do jogador no Minecraft"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Nome do item/rank comprado"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Valor pago em reais"
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o pagamento foi confirmado"
+    },
+    "mp_payment_id": {
+      "type": "string",
+      "description": "ID do pagamento no Mercado Pago"
+    },
+    "mp_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Status do pagamento: pending, approved, rejected, cancelled"
+    }
+  },
+  "required": [
+    "nick",
+    "item_name",
+    "amount"
+  ]
+}

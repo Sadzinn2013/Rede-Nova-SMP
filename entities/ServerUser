@@ -1,0 +1,41 @@
+{
+  "name": "ServerUser",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "description": "Nome de usu\u00e1rio no servidor"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email do jogador"
+    },
+    "password_hash": {
+      "type": "string",
+      "description": "Hash da senha"
+    },
+    "minecraft_nick": {
+      "type": "string",
+      "description": "Nick no Minecraft"
+    },
+    "rank": {
+      "type": "string",
+      "enum": [
+        "Jogador",
+        "VIP",
+        "LEGEND"
+      ],
+      "default": "Jogador",
+      "description": "Rank do jogador"
+    },
+    "registered_at": {
+      "type": "string",
+      "description": "Data de registro"
+    }
+  },
+  "required": [
+    "username",
+    "email",
+    "minecraft_nick"
+  ]
+}
