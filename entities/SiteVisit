@@ -1,0 +1,12 @@
+{
+  "name": "SiteVisit",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "number",
+      "description": "Total de visitas \u00fanicas ao site",
+      "default": 0
+    }
+  },
+  "required": []
+}

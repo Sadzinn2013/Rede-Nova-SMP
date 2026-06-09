@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 40 40% 55%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 40 40% 55%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 40 40% 55%;
+    --chart-1: 40 40% 55%;
+    --chart-2: 160 40% 40%;
+    --chart-3: 0 0% 53%;
+    --chart-4: 40 60% 65%;
+    --chart-5: 0 0% 70%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 40 40% 55%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 40 40% 55%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 40 40% 55%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 40 40% 55%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 40 40% 55%;
+    --chart-1: 40 40% 55%;
+    --chart-2: 160 40% 40%;
+    --chart-3: 0 0% 53%;
+    --chart-4: 40 60% 65%;
+    --chart-5: 0 0% 70%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 40 40% 55%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 40 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Ripple animation */
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple-effect 0.8s ease-out forwards;
+}
+
+/* Ghost cube rotation */
+@keyframes ghost-rotate {
+  0% { transform: rotate(0deg) rotateY(0deg); }
+  100% { transform: rotate(360deg) rotateY(360deg); }
+}
+
+.animate-ghost-cube {
+  animation: ghost-rotate 20s linear infinite;
+}
+
+.animate-ghost-cube-slow {
+  animation: ghost-rotate 30s linear infinite reverse;
+}

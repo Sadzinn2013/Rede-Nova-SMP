@@ -1,0 +1,47 @@
+{
+  "name": "Staff",
+  "type": "object",
+  "properties": {
+    "minecraft_nick": {
+      "type": "string",
+      "description": "Nick no Minecraft"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "Dono",
+        "Co-Dono",
+        "Administrador",
+        "Moderador",
+        "Helper"
+      ],
+      "description": "Cargo na staff"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o ou recado do membro"
+    },
+    "discord": {
+      "type": "string",
+      "description": "Discord do membro (opcional)"
+    },
+    "online": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o membro est\u00e1 online no servidor agora"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se o membro est\u00e1 ativo na staff"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordem de exibi\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "minecraft_nick",
+    "role"
+  ]
+}
