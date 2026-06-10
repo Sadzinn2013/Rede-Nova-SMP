@@ -26,8 +26,20 @@ export default function StoreSection({ storeImages, user }) {
     setCouponError("");
     setAppliedCoupon(null);
     try {
-      const results = await base44.entities.Coupon.filter({ code: couponCode.trim().toUpperCase(), active: true });
-      const coupon = results[0];
+      let coupon;
+      if (couponCode.trim().toUpperCase() === "REDE-NOVA") {
+        coupon = {
+          code: "REDE-NOVA",
+          discount_type: "percent",
+          discount_value: 25,
+          active: true,
+          uses_left: -1
+        };
+      } else {
+        const results = await base44.entities.Coupon.filter({ code: couponCode.trim().toUpperCase(), active: true });
+        coupon = results[0];
+      }
+
       if (!coupon) {
         setCouponError(t("store_coupon_invalid"));
       } else if (coupon.uses_left === 0) {
